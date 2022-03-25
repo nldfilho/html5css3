@@ -4,15 +4,15 @@
     joseassis.com.br
 */
 
+/* Importação (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 /* CSS Reset */
 * {
     margin: 0;
     border: 0;
     padding: 0;
 }
-
-/* Importação Google Fontes */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -21,12 +21,22 @@ body {
 
 /* Layout */
 .Container {
-    margin: 0 auto;
+    margin: 0 auto;   
 }
 
 .Flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;   
+}
+
+.Flex2 {
+    display: flex;
+    align-items: center;
+}
+
+.Flex3 {
+    display: flex;
+    flex-direction: column;
 }
 
 .Botao {
@@ -47,7 +57,7 @@ body {
     bottom: 10px;
 }
 
-/* Smartphoone Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Smartphone Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 /* Cabeçalho */
 header {
@@ -65,7 +75,10 @@ header {
 
 label {
     font-size: 3em;
-    padding-right: 15px;
+    position: fixed;
+    top: 5px;
+    right: 15px;
+    color: rgba(0,0,0,0.5);
 }
 
 nav ul {
@@ -88,10 +101,11 @@ nav ul li {
     border-bottom: 1px solid #a9a9a9;
 }
 
-nav ul li a  {
+nav ul li a {
     text-decoration: none;
     color: #fff;
 }
+
 /* Destaque */
 main {
     height: 75vh;
@@ -111,37 +125,88 @@ main h1 {
 
 main h2 {
     font-size: 1em;
-    margin: 20px 0px 50px  0px;
+    margin: 20px 0px 50px 0px;
 }
 
-/* Smartphone Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Sobre */
+#sobre {
+    padding: 50px 0px;
+    background: url(img/background.png);
+    background-size: cover;
+    background-position: center;
+}
 
-@media (min-width: 576px){
+#destaqueSobre {
+    display: none;
+}
 
+#textoSobre {
+    color: #fff;
+    padding: 0px 10px;
+}
+
+#textoSobre h2 {
+    margin-bottom: 10px;
+}
+
+.TopicosSobre {
+    margin-top: 20px;
+}
+
+.TopicosSobre img {
+    margin-right: 10px;
+}
+
+/* One page */
+#onepage {
+    padding: 50px 10px;
+}
+
+#onepage h2 {
+    margin-bottom: 10px;
+}
+
+#onepage p {
+    margin-bottom: 25px;
+}
+
+#video iframe {
+    width: 340px;
+    height: 191px; 
+    border: 0;   
+}
+
+/* Smartphone Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 576px) {
     /* Layout */
     .Container {
         max-width: 540px;
     }
+
     /* Destaque */
     main h1, main h2 {
-        text-shadow: black 0.05em 0.05em 0.05em;
+        text-shadow: #000 0.05em 0.05em 0.05em;
+    }
+
+    /* One page */
+    #video iframe{
+        width: 560px;
+        height: 315px;
     }
 }
 
-/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-
-@media (min-width: 768px){
-
+/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 768px) {
     /* Layout */
     .Container {
         max-width: 720px;
     }
-    
+
     /* Destaque */
     main {
         height: 45vh;
     }
-    
+
     main h1 {
         font-size: 5.5em;
     }
@@ -151,10 +216,8 @@ main h2 {
     }
 }
 
-/* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-
-@media (min-width: 992px){
-
+/* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 992px) {
     /* Layout */
     .Container {
         max-width: 960px;
@@ -166,10 +229,8 @@ main h2 {
     }
 }
 
-/* PC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-
-@media (min-width: 1200px){
-
+/* PC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 1200px) {
     /* Layout */
     .Container {
         max-width: 1140px;
@@ -179,16 +240,22 @@ main h2 {
     header {
         height: 120px;
     }
+    
+    #logo img {
+        width: 189px;
+        height: 189px;
+        margin-top: 30px;
+    }
 
     label {
         display: none;
     }
 
-    nav ul  {
+    nav ul {
         position: static;
         height: auto;
         background-color: transparent;
-        margin-top: 50px;
+        margin-top: 40px;
     }
 
     nav ul li {
@@ -201,12 +268,27 @@ main h2 {
     }
 
     nav ul li a:hover {
-        color: red;
+        color: #c00000;
     }
 
-    #logo img {
-        width: 189px;
-        height: 189px;
-        margin-top: 30px;
+    /* Sobre */
+    #sobre {
+        background-attachment: fixed;
     }
+
+    #destaqueSobre {
+        display: inline;
+    }
+
+    #destaqueSobre img {
+        border-radius: 50%;
+        margin-right: 50px;
+    }
+
+    /* One page */
+    .Flex3 {
+        flex-direction: row;
+        align-items: center;
+    }
+
 }
